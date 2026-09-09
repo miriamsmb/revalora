@@ -135,12 +135,12 @@ hr.hr--slim {
 .hero__decor-blob {
   position: absolute;
   z-index: -1;
-  top: -20%;
-  right: -6%;
-  width: 45%;
-  max-width: 560px;
+  top: -24%;
+  right: 0;
+  width: 49%;
+  max-width: 706px;
   min-width: 280px;
-  opacity: 0.6;
+  aspect-ratio: 706 / 523;
   pointer-events: none;
 }
 
@@ -188,10 +188,9 @@ hr.hr--slim {
   position: absolute;
   top: 0;
   right: 0;
-  width: min(42vw, 620px);
-  height: min(46vw, 680px);
-  object-fit: contain;
-  object-position: top right;
+  width: 47%;
+  max-width: 660px;
+  height: auto;
   filter: drop-shadow(0 4px 40px rgba(83, 83, 83, 0.25));
   z-index: 0;
 }
