@@ -42,7 +42,12 @@
     <div class="map-diagram">
       <div class="map-diagram__frame">
         <img class="map-diagram__base" src="assets/images/map-brasil.svg" alt="Mapa do Brasil com destaque para a região Nordeste e o estado de Pernambuco">
-        <img class="map-diagram__highlight" src="assets/icons/map-pernambuco.svg" alt="" aria-hidden="true">
+        <button type="button" class="map-diagram__pernambuco" aria-describedby="pernambuco-tooltip">
+          <img class="map-diagram__highlight" src="assets/icons/map-pernambuco.svg" alt="Pernambuco">
+          <span class="map-diagram__tooltip" id="pernambuco-tooltip" role="tooltip">
+            Entre 2023 e 2024, o Nordeste apresentou o maior crescimento na geração per capita entre as regiões, alcançando o valor de <strong>0,967 kg/hab/dia</strong> em 2024 - aumento de <strong>0,8%</strong>
+          </span>
+        </button>
         <span class="map-diagram__cursor" aria-hidden="true">
           <span class="material-symbols-outlined">arrow_selector_tool</span>
         </span>
