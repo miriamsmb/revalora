@@ -20,7 +20,7 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --side-gap: clamp(20px, 6vw, 170px);
+  --side-gap: 170px;
   --radius-sm: 8px;
   --radius-md: 16px;
 
@@ -215,6 +215,14 @@ hr.hr--slim {
   gap: 24px;
 }
 
+/* Section 1's text column is a fixed 418px in the source design,
+   not a flexible/growing column like the other split sections. */
+.section--split .section__content {
+  flex: 0 1 418px;
+  width: 418px;
+  max-width: 100%;
+}
+
 .section__image {
   flex: 1 1 380px;
   min-width: 260px;
@@ -366,15 +374,15 @@ hr.hr--slim {
 .map-diagram__highlight {
   position: absolute;
   top: 31.8%;
-  left: 81%;
-  width: 16.3%;
+  left: 79%;
+  width: 15.8%;
   pointer-events: none;
 }
 
 .map-diagram__cursor {
   position: absolute;
   top: 34.6%;
-  left: 93%;
+  left: 88.5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -445,6 +453,7 @@ hr.hr--slim {
 
 .divider--pale {
   background: var(--color-green-pale);
+  margin-inline: 24px;
 }
 
 .divider__number {
@@ -470,7 +479,7 @@ hr.hr--slim {
 .divider--dark {
   background: var(--color-green);
   color: var(--color-white);
-  padding: clamp(32px, 5vw, 40px) var(--side-gap);
+  padding: clamp(32px, 5vw, 40px) clamp(24px, 10vw, 144px);
   text-align: center;
 }
 
@@ -907,6 +916,18 @@ hr.hr--slim {
 /* ==========================================================================
    Responsive
    ========================================================================== */
+
+@media (max-width: 1240px) {
+  :root {
+    --side-gap: 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --side-gap: 24px;
+  }
+}
 
 @media (max-width: 900px) {
   .hero {
