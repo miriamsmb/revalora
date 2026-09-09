@@ -21,7 +21,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__texture" aria-hidden="true"></div>
     <img class="hero__decor-blob" src="assets/icons/hero-ellipse.svg" alt="" aria-hidden="true">
     <img class="hero__decor-line" src="assets/icons/decor-vector-1.svg" alt="" aria-hidden="true">
     <div class="hero__content">
@@ -114,52 +113,42 @@
 
   <!-- SECTION 4: Recife em foco + ciclo -->
   <section class="section section--foco container">
-    <div class="foco__decor" aria-hidden="true">
-      <img class="foco__decor-shape foco__decor-shape--ellipse-a" src="assets/icons/decor-ellipse-1.svg" alt="">
-      <img class="foco__decor-shape foco__decor-shape--ellipse-b" src="assets/icons/decor-ellipse-2.svg" alt="">
-      <img class="foco__decor-shape foco__decor-shape--polygon-a" src="assets/icons/decor-polygon-1.svg" alt="">
-      <img class="foco__decor-shape foco__decor-shape--polygon-b" src="assets/icons/decor-polygon-2.svg" alt="">
-    </div>
     <p class="foco__eyebrow">RECIFE EM FOCO:</p>
     <p class="foco__number">R$ 300<span>mi</span></p>
     <p class="foco__caption">para investir em economia circular</p>
 
-    <ol class="cycle" aria-label="Ciclo de investimento em economia circular">
-      <li class="cycle__step">
+    <div class="cycle-orbit" aria-label="Ciclo de investimento em economia circular">
+      <img class="cycle-orbit__arrows" src="assets/icons/cycle-arrows.svg" alt="" aria-hidden="true">
+      <div class="cycle-orbit__step cycle-orbit__step--1">
         <span class="cycle__badge">1</span>
         <img class="cycle__image" src="assets/images/step-1.webp" alt="Materiais recicláveis separados: vidro, latas e papelão">
         <p class="cycle__label">Coleta</p>
-      </li>
-      <li class="cycle__arrow" aria-hidden="true"><span class="material-symbols-outlined">arrow_forward</span></li>
-      <li class="cycle__step">
+      </div>
+      <div class="cycle-orbit__step cycle-orbit__step--2">
         <span class="cycle__badge">2</span>
         <img class="cycle__image" src="assets/images/step-2.webp" alt="Repasse de caixa com materiais recicláveis entre pessoas">
         <p class="cycle__label">Triagem</p>
-      </li>
-      <li class="cycle__arrow" aria-hidden="true"><span class="material-symbols-outlined">arrow_forward</span></li>
-      <li class="cycle__step">
+      </div>
+      <div class="cycle-orbit__step cycle-orbit__step--3">
         <span class="cycle__badge">3</span>
         <img class="cycle__image" src="assets/images/step-3.webp" alt="Artesã costurando produto com retalhos reaproveitados">
         <p class="cycle__label">Transformação</p>
-      </li>
-      <li class="cycle__arrow" aria-hidden="true"><span class="material-symbols-outlined">arrow_forward</span></li>
-      <li class="cycle__step">
+      </div>
+      <div class="cycle-orbit__step cycle-orbit__step--4">
         <span class="cycle__badge">4</span>
         <img class="cycle__image" src="assets/images/step-4.webp" alt="Venda de produtos artesanais em feira">
         <p class="cycle__label">Novo produto</p>
-      </li>
-    </ol>
+      </div>
+    </div>
   </section>
 
   <!-- FLAG + produtos -->
-  <section class="section container">
+  <section class="section section--plastic container">
     <div class="flag flag--outline">
       <img class="flag__icon" src="assets/icons/icon-eco.svg" alt="" aria-hidden="true">
       <p class="flag__text">O quilo do plástico comum, que antes era vendido cru por <strong>R$ 1,80</strong>, passa a valer até <strong>R$ 100,00</strong> quando comercializado na forma de produtos finais</p>
     </div>
-    <div class="product-collage">
-      <img class="product-collage__img" src="assets/images/product-1.webp" alt="Bolsa de tecido e bijuterias feitas a partir de plástico e metal reaproveitados">
-    </div>
+    <img class="plastic-image" src="assets/images/product-1.webp" alt="Bolsa de tecido e bijuterias feitas a partir de plástico e metal reaproveitados">
   </section>
 
   <!-- DIVIDER dark -->
