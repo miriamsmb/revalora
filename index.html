@@ -13,10 +13,6 @@
 
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-logo">
-  <img class="site-logo__img" src="assets/icons/logo.svg" alt="Revalora" width="145" height="32">
-</header>
-
 <main id="conteudo">
 
   <!-- HERO -->
@@ -24,6 +20,7 @@
     <img class="hero__decor-blob" src="assets/icons/hero-ellipse.svg" alt="" aria-hidden="true">
     <img class="hero__decor-line" src="assets/icons/decor-vector-1.svg" alt="" aria-hidden="true">
     <div class="hero__content">
+      <img class="hero__logo" src="assets/icons/logo.svg" alt="Revalora" width="145" height="32">
       <h1 class="hero__title">O valor<br>da sobra</h1>
       <p class="hero__subtitle">Quando o descarte encontra destino, vira <strong>matéria-prima</strong></p>
     </div>
@@ -38,10 +35,18 @@
         <p class="stat-block__number stat-block__number--xl">81,6</p>
         <p class="stat-block__lead">milhões de toneladas de RSU<br>(Resíduos Sólidos Urbanos).</p>
       </div>
-      <p class="flag">A região Nordeste contribui nesses índices com <strong>24,7%</strong>, cerca de <strong>20,2 milhões de toneladas</strong>.</p>
+      <div class="flag">
+        <p class="flag__text">A região Nordeste contribui nesses índices com <strong>24,7%</strong>, cerca de <strong>20,2 milhões de toneladas</strong>.</p>
+      </div>
     </div>
     <div class="map-diagram">
-      <img src="assets/images/map-brasil.svg" alt="Mapa do Brasil com destaque para a região Nordeste e a cidade do Recife" width="661" height="668">
+      <div class="map-diagram__frame">
+        <img class="map-diagram__base" src="assets/images/map-brasil.svg" alt="Mapa do Brasil com destaque para a região Nordeste e o estado de Pernambuco">
+        <img class="map-diagram__highlight" src="assets/icons/map-pernambuco.svg" alt="" aria-hidden="true">
+        <span class="map-diagram__cursor" aria-hidden="true">
+          <span class="material-symbols-outlined">arrow_selector_tool</span>
+        </span>
+      </div>
     </div>
   </section>
 
