@@ -15,24 +15,23 @@ Then open `http://localhost:8000`.
 ## Structure
 
 ```
-index.html          Page markup, section by section
-css/fonts.css        @font-face declarations (self-hosted DM Sans, Playfair Display, Material Symbols Outlined)
-css/styles.css        Layout, color tokens, responsive rules
-assets/fonts/          Downloaded .woff2 font files
-assets/favicon.svg     Site favicon
+index.html               Page markup, section by section
+css/fonts.css             @font-face declarations (self-hosted DM Sans, Playfair Display, Material Symbols Outlined)
+css/styles.css             Layout, color tokens, responsive rules
+assets/fonts/               Downloaded .woff2 font files
+assets/icons/                Logo + Figma-exported SVG icons (badges, needs-card icons)
+assets/images/                Photos, the Brazil map SVG, and the background texture
+assets/favicon.svg          Site favicon
 ```
 
-## Placeholder assets
+## Assets
 
-The network policy in the environment this was built in blocked direct access to Figma's asset CDN (`figma.com`), so the original photography, the Brazil/Recife map illustration, and a few decorative vector graphics from the design could not be downloaded.
+The Figma file's asset CDN wasn't reachable from the environment this was first built in, so the page originally shipped with placeholder blocks and a Material Symbols icon substitute. All real assets (photography, the Brazil/Nordeste/Recife map, icons, and the app logo) have since been supplied directly and are in place under `assets/`.
 
-To keep the page visually complete these were substituted with:
+A couple of adaptations from the original Figma design are worth noting:
 
-- **Icons** — [Material Symbols](https://fonts.google.com/icons) (self-hosted), matching the icon names used in the Figma file (recycling, bar_chart, groups, domain, local_shipping, search, handshake, paid, error, eco, etc).
-- **Photography** (hero image, step/cycle photos, artisan/product photos, phone-mockup screen) — soft gradient placeholder blocks (`.ph-image`) sized and positioned to match the design.
-- **Brazil → Nordeste → Recife map** — a simplified nested-circle diagram instead of the literal map illustration.
-
-**To finish the page with real assets:** export the corresponding images from the Figma file and drop them into `assets/images/`, then swap each `.ph-image` placeholder `<div>` in `index.html` for an `<img>` tag pointing at the new file.
+- The 4-step "economia circular" cycle uses the real step photos, captioned Coleta → Triagem → Transformação → Novo produto.
+- The plastic-transformation section uses a single product photo (bag + reclaimed material) rather than the original two-image collage.
 
 ## Content notes
 

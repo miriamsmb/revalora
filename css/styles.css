@@ -113,50 +113,9 @@ hr.hr--slim {
   padding: 32px var(--side-gap) 0;
 }
 
-.site-logo__inner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.site-logo__icon {
-  color: var(--color-green);
-  font-size: 28px;
-}
-
-.site-logo__text {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-weight: 500;
-  color: var(--color-green);
-  font-size: 18px;
-  letter-spacing: 4px;
-}
-
-/* ==========================================================================
-   Placeholder image treatment
-   (real photography/vector assets from the Figma file could not be
-   downloaded in this environment — see README for how to swap them in)
-   ========================================================================== */
-
-.ph-image {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--color-green-soft), var(--color-green-pale));
-}
-
-.ph-image--soft {
-  background: linear-gradient(135deg, rgba(185, 200, 179, 0.55), rgba(110, 77, 92, 0.25));
-}
-
-.ph-image__icon {
-  color: var(--color-white);
-  opacity: 0.85;
-  font-size: clamp(28px, 12vw, 72px);
+.site-logo__img {
+  height: 32px;
+  width: auto;
 }
 
 /* ==========================================================================
@@ -175,19 +134,10 @@ hr.hr--slim {
   position: absolute;
   inset: 0;
   opacity: 0.4;
-  background-image: radial-gradient(rgba(76, 96, 35, 0.06) 1.5px, transparent 1.5px);
-  background-size: 22px 22px;
-  pointer-events: none;
-}
-
-.hero__decor-ellipse {
-  position: absolute;
-  top: -180px;
-  right: -120px;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(185, 200, 179, 0.55), rgba(185, 200, 179, 0));
+  background-image: url("../assets/images/texture.jpg");
+  background-size: 1024px auto;
+  background-repeat: repeat;
+  background-position: top left;
   pointer-events: none;
 }
 
@@ -237,8 +187,9 @@ hr.hr--slim {
   right: 0;
   width: min(42vw, 620px);
   height: min(46vw, 680px);
-  border-radius: 0 0 0 var(--radius-md);
-  box-shadow: 0 4px 62px 0 rgba(83, 83, 83, 0.2);
+  object-fit: contain;
+  object-position: top right;
+  filter: drop-shadow(0 4px 40px rgba(83, 83, 83, 0.25));
   z-index: 0;
 }
 
@@ -276,6 +227,8 @@ hr.hr--slim {
   min-width: 260px;
   width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
 }
 
 .section__title {
@@ -405,57 +358,10 @@ hr.hr--slim {
   padding: 24px;
 }
 
-.map-diagram__ring {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--color-green-soft);
-}
-
-.map-diagram__ring--brasil {
-  width: min(70vw, 420px);
-  height: min(70vw, 420px);
-}
-
-.map-diagram__ring--nordeste {
-  width: 62%;
-  height: 62%;
-  background: var(--color-wine);
-  opacity: 0.85;
-}
-
-.map-diagram__label {
-  position: absolute;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-black);
-}
-
-.map-diagram__ring--nordeste .map-diagram__label {
-  color: var(--color-white);
-}
-
-.map-diagram__pin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-white);
-}
-
-.map-diagram__pin .material-symbols-outlined {
-  font-size: 44px;
-}
-
-.map-diagram__pin-label {
-  font-weight: 700;
-  font-size: 15px;
+.map-diagram img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
 }
 
 /* Two-column stats (Section 2) */
@@ -551,6 +457,39 @@ hr.hr--slim {
   max-width: 640px;
 }
 
+.section__intro--split {
+  flex-direction: row;
+  align-items: center;
+  max-width: none;
+  gap: clamp(24px, 5vw, 56px);
+}
+
+.section__intro--split > div {
+  flex: 1 1 420px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section__intro-image {
+  flex: 1 1 320px;
+  min-width: 240px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 800px) {
+  .section__intro--split {
+    flex-direction: column;
+  }
+  .section__intro-image {
+    max-width: 100%;
+  }
+}
+
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -581,8 +520,8 @@ hr.hr--slim {
 }
 
 .stat-card__icon {
-  font-size: 48px;
-  color: var(--color-green);
+  width: 64px;
+  height: 64px;
 }
 
 .stat-card__number {
@@ -680,7 +619,10 @@ hr.hr--slim {
 .cycle__image {
   width: 100%;
   aspect-ratio: 1;
+  object-fit: contain;
   border-radius: var(--radius-md);
+  background: var(--color-green-pale);
+  padding: 8px;
 }
 
 .cycle__label {
@@ -706,19 +648,13 @@ hr.hr--slim {
 
 .product-collage {
   display: flex;
-  gap: 16px;
   margin-top: 24px;
   justify-content: center;
 }
 
 .product-collage__img {
-  width: 200px;
-  aspect-ratio: 4/5;
-}
-
-.product-collage__img--b {
-  width: 140px;
-  align-self: flex-end;
+  width: min(100%, 340px);
+  height: auto;
 }
 
 /* Section 8: needs cards */
@@ -748,8 +684,9 @@ hr.hr--slim {
   color: var(--color-white);
 }
 
-.needs-card .material-symbols-outlined {
-  font-size: 32px;
+.needs-card img {
+  width: 32px;
+  height: 32px;
 }
 
 .needs-card p {
@@ -777,54 +714,8 @@ hr.hr--slim {
 
 .phone-mock {
   flex: 0 0 auto;
-  width: 220px;
-  height: 440px;
-  border-radius: 32px;
-  border: 8px solid var(--color-black);
-  background: var(--color-black);
-  box-shadow: 0 3px 11px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-}
-
-.phone-mock__screen {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
-  background: linear-gradient(160deg, var(--color-green-soft), var(--color-green-pale));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.phone-mock__glyph {
-  font-size: 72px;
-  color: var(--color-white);
-  opacity: 0.7;
-}
-
-.phone-mock__badge {
-  position: absolute;
-  background: var(--color-wine);
-  color: var(--color-white);
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.phone-mock__badge--a {
-  top: 18%;
-  left: -18px;
-}
-
-.phone-mock__badge--b {
-  bottom: 22%;
-  right: -18px;
+  width: min(100%, 320px);
+  height: auto;
 }
 
 /* Sources & credits */
@@ -908,7 +799,6 @@ hr.hr--slim {
     height: 320px;
     margin-top: 32px;
   }
-  .hero__decor-ellipse,
   .hero__decor-line {
     display: none;
   }
